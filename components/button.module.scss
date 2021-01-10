@@ -1,0 +1,110 @@
+
+/*
+  BUTTONS
+*/
+
+// Shared styles
+$button-border: none !default;
+$button-font-size: 14px !default;
+$button-icon-font-size: 1.5rem !default;
+$button-height: 40px !default;
+$button-padding: 0 16px !default;
+$button-border-radius: 4px !default;
+
+// Disabled styles
+$button-disabled-background: #dfdfdf !default;
+$button-disabled-border: #dfdfdf !default;
+$button-disabled-color: #9f9f9f !default;
+
+// Default
+$button-default-background: #00b7ef;
+$button-default-background-hover: darken($button-default-background, 5%) !default;
+$button-default-color: white;
+$button-default-border: none;
+
+// Outline buttons
+$button-outline-color: green !default;
+$button-outline-border: 1px solid $button-outline-color !default;
+$button-outline-color-hover: darken($button-outline-color, 5%) !default;
+$button-outline-disabled-color: $button-disabled-color !default;
+
+%button-base {
+  -webkit-tap-highlight-color: transparent; // Gets rid of tap active state
+  align-items: center;
+  background-color: inherit;
+  border-radius: $button-border-radius;
+  border: $button-border;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: $button-font-size;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: 0.03em;
+  line-height: $button-height;
+  min-height: $button-height;
+  padding: $button-padding;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  vertical-align: middle;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Standard Button
+
+.button {
+  @extend %button-base;
+  background-color: $button-default-background;
+
+  &:hover {
+    background: $button-default-background-hover;
+  }
+
+  &:active {
+    background: darken($button-default-background-hover, 10%);
+  }
+
+  &.is-disabled,
+  &[disabled],
+  &:disabled {
+    color: $button-disabled-color !important;
+    background: $button-disabled-background !important;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &.outline {
+    background-color: transparent;
+    color: $button-outline-color;
+    border: $button-outline-border;
+
+    &:hover {
+      background: transparent;
+      border-color: darken($button-outline-color, 5%);
+      color: darken($button-outline-color, 5%);
+    }
+
+    &:active {
+      border-color: darken($button-outline-color, 10%);
+      color: darken($button-outline-color, 10%);
+    }
+
+    &.is-disabled,
+    &[disabled],
+    &:disabled {
+      color: $button-disabled-color !important;
+      background: $button-disabled-background !important;
+      cursor: default;
+      pointer-events: none;
+      border: none;
+    }
+  }
+}

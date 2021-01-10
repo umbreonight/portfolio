@@ -1,0 +1,14 @@
+.link {
+    -webkit-tap-highlight-color: transparent; // Gets rid of tap active state
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid white;
+    color: white;
+    display: inline-flex;
+    font-family: var(--font-family-heading);
+    font-size: 1rem;
+    justify-content: center;
+    min-width: 100px;
+    padding: 8px 12px;
+    text-transform: uppercase;
+}

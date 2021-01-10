@@ -1,0 +1,30 @@
+.profileSkills {
+    display: flex;
+    justify-content: center;
+
+    .profileSkillsItem {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1rem;
+        border-radius: 50%;
+        background: linear-gradient(145deg, #413c37, #37322e);
+        box-shadow: 6px 6px 12px #34302b, -6px -6px 12px #46403b;
+
+        backdrop-filter: blur(40px);
+        border: solid 2px transparent;
+        background-clip: padding-box;
+
+        &:active {
+            border-radius: 50%;
+            background: linear-gradient(145deg, #37322e, #413c37);
+            box-shadow: 6px 6px 12px #34302b, -6px -6px 12px #46403b;
+        }
+
+        i {
+            color: white;
+        }
+    }
+}

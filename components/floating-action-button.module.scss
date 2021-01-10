@@ -1,0 +1,137 @@
+// Shared styles
+$button-border: none !default;
+$button-font-size: 14px !default;
+$button-icon-font-size: 1.5rem !default;
+$button-height: 40px !default;
+$button-padding: 0 16px !default;
+$button-border-radius: 4px !default;
+
+// Disabled styles
+$button-disabled-background: #dfdfdf !default;
+$button-disabled-border: #dfdfdf !default;
+$button-disabled-color: #9f9f9f !default;
+
+// Small buttons
+$button-small-font-size: 12px !default;
+$button-small-icon-font-size: 1.2rem !default;
+$button-small-height: $button-height * 0.8 !default;
+$button-round-small-size: $button-height * 0.9 !default;
+
+// Fixed button
+$button-fixed-background: white !default;
+$button-fixed-background-hover: darken($button-fixed-background, 5%) !default;
+$button-fixed-color: white !default;
+$button-fixed-size: 56px;
+$button-fixed-font-size: 24px;
+$button-fixed-padding: 16px;
+$button-fixed-gap: 0.75rem;
+$button-fixed-radius: 100%;
+
+$button-fixed-mini-size: 40px;
+$button-fixed-mini-padding: 8px;
+
+%button-base {
+    -webkit-tap-highlight-color: transparent; // Gets rid of tap active state
+    align-items: center;
+    background-color: inherit;
+    border-radius: $button-border-radius;
+    border: $button-border;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: $button-font-size;
+    font-weight: 600;
+    justify-content: center;
+    letter-spacing: 0.03em;
+    line-height: $button-height;
+    min-height: $button-height;
+    padding: $button-padding;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    vertical-align: middle;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.floatingActionButton {
+    @extend %button-base;
+    border-radius: $button-fixed-radius;
+    height: $button-fixed-size;
+    line-height: $button-fixed-size;
+    width: $button-fixed-size;
+    position: relative;
+    z-index: 100;
+    overflow: visible;
+    margin: 0;
+    padding: 0 8px;
+    transition: background-color 0.3s ease-in-out;
+    background: linear-gradient(145deg, #d7d7d7, #ffffff);
+    color: var(--primary-color);
+    transition: transform, filter ease-out 0.1s, background 0.2s;
+
+    &:hover {
+        &:before {
+            animation: none;
+            filter: none;
+        }
+        &:after {
+            animation: sonarEffect 1.3s ease-out 75ms;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: whitesmoke;
+        z-index: -1;
+        border-radius: 100%;
+        animation: fab-pulse 2s infinite;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: whitesmoke;
+        z-index: -1;
+        border-radius: 100%;
+    }
+
+    svg {
+        width: 3rem;
+        font-size: 48px;
+        color: var(--primary-color);
+        transition: color 0.3s ease-in-out;
+    }
+
+    .icon {
+        font-size: 36px;
+    }
+
+    &.left {
+        left: $button-fixed-gap;
+    }
+
+    &.center {
+        left: calc(50% - (#{$button-fixed-size} / 2));
+        right: calc(50% - (#{$button-fixed-size} / 2));
+    }
+
+    & ~ main {
+        padding-bottom: 90px;
+    }
+}

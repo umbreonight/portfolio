@@ -1,0 +1,63 @@
+.projects {
+    display: grid;
+    gap: 2rem;
+
+    @media (min-width: 41.143em) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.project {
+    .projectImage {
+        // background-color: $card-bg-color;
+        border-radius: 8px;
+        // margin: $element-bottom-margin 0 $element-bottom-margin 0;
+        overflow: hidden;
+        position: relative;
+        transition: box-shadow 0.25s;
+
+        backdrop-filter: blur(40px);
+        border: solid 2px transparent;
+        background-clip: padding-box;
+
+        // Image background for content
+        img {
+            display: block;
+            position: relative;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            height: 200px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .projectTitle {
+        font-size: 24px;
+        line-height: 28px;
+
+        color: #ffffff;
+
+        margin: 1rem 0 0.5rem;
+    }
+
+    .projectSubtitle {
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height */
+
+        text-transform: uppercase;
+
+        color: #ffffff;
+
+        margin: 0.5rem 0 1.5rem;
+    }
+}

@@ -1,0 +1,32 @@
+.educationItem {
+    .educationItemDuration {
+        font-size: 0.875rem;
+        display: block;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        color: var(--accent-color);
+    }
+
+    .educationItemTitle {
+        font-size: 24px;
+        line-height: 28px;
+
+        color: #ffffff;
+
+        margin: 0;
+    }
+
+    .educationItemSubtitle {
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height */
+
+        text-transform: uppercase;
+
+        color: #ffffff;
+    }
+
+    .educationItemOverview {
+        margin: 1.5rem 0;
+    }
+}
