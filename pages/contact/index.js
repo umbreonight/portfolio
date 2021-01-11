@@ -14,7 +14,7 @@ export default function Contact() {
                 <SectionTitle text="contact" />
                 <form name="contact" method="POST" action="/contact/success" data-netlify="true">
                     <input type='hidden' name='form-name'
-                        value='contact-form' />
+                        value='contact' />
                     <p>
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" />
