@@ -1,0 +1,148 @@
+// Shared styles
+$input-border: 1px solid #dee2e6 !default;
+$input-focus-border: darken(#00b7ef, 10);
+$input-background-color: transparent !default;
+$input-font-size: var(--font-size-base) !default;
+$input-icon-font-size: 1.3rem !default;
+$input-height: 40px !default;
+$input-padding: 0.5rem 1rem !default;
+$input-border-radius: var(--base-border-radius-small) !default;
+
+// Disabled styles
+$input-disabled-background: #dee2e6 !default;
+$input-disabled-border: lighten(#3b4349, 5);
+$input-disabled-color: #ced4da !default;
+
+// Error styles
+$input-error-border: var(--accent-color);
+$input-error-color: var(--accent-color) !default;
+
+// Validation inputs
+$input-validate-border-right: 5px;
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-family: var(--font-family-base);
+  margin: 15px 0;
+  color: var(--text-color);
+  justify-content: flex-start;
+
+  /* Change Autocomplete styles in Chrome*/
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    // border: 1px solid green;
+    -webkit-text-fill-color: white;
+    // -webkit-box-shadow: 0 0 0px 1000px transparent 000 inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  input:not([type]),
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"],
+  input[type="time"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="search"],
+  select {
+    // Shared styles
+    -webkit-appearance: none;
+    color: white;
+    background-color: $input-background-color;
+    border: none;
+    border: $input-border;
+    border-radius: $input-border-radius;
+    outline: none;
+    height: $input-height;
+    line-height: $input-height;
+    font-size: $input-font-size;
+    padding: $input-padding;
+    box-shadow: none;
+    margin: 5px 0;
+
+    &:hover {
+      border-color: var(--primary-color);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $input-focus-border;
+    }
+
+    &[type="number"]::-webkit-inner-spin-button,
+    &[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    // Disabled input style
+    &:disabled,
+    &[disabled] &[readonly="readonly"] {
+      color: $input-disabled-color;
+      border-color: $input-disabled-border;
+      pointer-events: none;
+    }
+
+    &:required + label:before,
+    &[required] + label:before {
+      color: var(--primary-color);
+      content: "*";
+    }
+
+    // Disabled label style
+    &[disabled] + label,
+    &[readonly="readonly"] + label {
+      color: $input-disabled-color;
+
+      & + span {
+        color: $input-disabled-color;
+      }
+
+      &:before {
+        color: $input-disabled-color;
+      }
+    }
+  }
+
+  select {
+    padding: 0 16px;
+    width: auto;
+  }
+
+  &.is-invalid {
+    input {
+      border: 1px solid var(--error-color);
+    }
+
+    .helper {
+      color: var(--error-color);
+    }
+  }
+
+  label {
+    text-align: left;
+    text-transform: unset;
+    font-size: 14px;
+    font-family: var(--font-family-base);
+    order: -1;
+
+    & + .helper {
+      text-align: left;
+      user-select: none;
+      font-size: 0.75rem;
+    }
+  }
+}
