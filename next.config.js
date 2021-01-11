@@ -1,6 +1,10 @@
 const path = require('path')
+const withPWA = require('next-pwa')
 
-module.exports = {
+module.exports = withPWA({
+    pwa: {
+        dest: 'public'
+    },
     // Target must be serverless
     target: 'serverless',
 
@@ -8,4 +12,4 @@ module.exports = {
         includePaths: [path.join(__dirname, 'styles')],
         includePaths: ['./src'],
     },
-}
+})
