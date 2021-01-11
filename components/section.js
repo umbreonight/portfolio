@@ -1,10 +1,16 @@
 import styles from "./section.module.scss"
 
-export default function Section({ children, className }) {
+export default function Section({ children, profile }) {
     return (
-        <section className={className}>
-            {children}
-        </section>
+        (!!profile ?
+            <section className={styles.profile}>
+                {children}
+            </section>
+            :
+            <section>
+                {children}
+            </section>
+        )
     )
 }
 

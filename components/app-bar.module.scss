@@ -1,9 +1,5 @@
 .app-bar {
-  display: grid;
-  grid-template-columns: 1fr 40px 1fr;
-  grid-template-areas: "app-bar-left app-bar-logo app-bar-right";
-  align-items: center;
-  justify-content: center;
+  display: flex;
   min-height: 56px;
   padding: 1rem;
   position: fixed;
@@ -12,6 +8,18 @@
   transition: all 0.2s ease-in-out;
   z-index: 80;
 
+  .container {
+    width: 100%;
+    max-width: 36rem;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    grid-template-areas: "app-bar-left app-bar-logo app-bar-right";
+    align-items: center;
+    justify-content: center;
+  }
+
   .app-bar-logo {
     grid-area: app-bar-logo;
     width: 40px;
@@ -19,6 +27,7 @@
   }
 
   .app-bar-back {
+    -webkit-tap-highlight-color: transparent; // Gets rid of tap active state
     grid-area: app-bar-left;
     display: flex;
     align-items: center;

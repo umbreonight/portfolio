@@ -15,6 +15,7 @@ export default function Hub () {
                 <MyLink href="/education" text="Education"/>
                 <MyLink href="/experience" text="Experience"/>
                 <MyLink href="/profile" text="Profile"/>
+                
             </Section>
         </Layout>
     )

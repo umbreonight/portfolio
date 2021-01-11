@@ -2,7 +2,8 @@ import ProfileHeader from "./components/profile-header";
 import Layout, { siteTitle } from "components/layout";
 import Section from "components/section";
 import Head from "next/head";
-import ProfileSkills from "./components/profile-skills";
+import ProfileContact from "./components/profile-contact";
+import ScrollIndicator from "./components/scroll-indicator";
 
 export default function Profile() {
     return (
@@ -11,9 +12,9 @@ export default function Profile() {
                 <title>{siteTitle}</title>
             </Head>
 
-            <Section>
+            <Section profile>
                 <ProfileHeader image={"/images/me.jpg"} title={"Darren van Reenen"} subtitle={"Front End Developer"} />
-                <ProfileSkills />
+                <ProfileContact />
             </Section>
         </Layout>
     )

@@ -18,8 +18,10 @@ export default function AppBar({ back }) {
 
     return (
         <header className={styles["app-bar"] + " " + (isCollapsed ? styles["is-collapsed"] : "")}>
-            {!!back && <Back />}
-            <img src={"/images/logo192.png"} height="40" width="40" alt="app-logo" className={styles["app-bar-logo"]} />
+            <div className={styles.container}>
+                {!!back && <Back />}
+                <img src={"/images/logo192.png"} height="40" width="40" alt="app-logo" className={styles["app-bar-logo"]} />
+            </div>
         </header>
 
     );

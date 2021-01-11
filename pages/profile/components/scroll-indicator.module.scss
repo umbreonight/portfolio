@@ -1,0 +1,10 @@
+.scrollIndicator {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    i {
+        font-size: var(--font-size-extra);
+        color: white;
+    }
+}

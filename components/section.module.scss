@@ -34,3 +34,15 @@
         margin-top: 2rem;
     }
 }
+
+section {
+    &.profile {
+        display: grid;
+        grid-template-rows: max-content 60px 1fr;
+        gap: 1rem;
+
+        @media (min-width: 375px) {
+            gap: 1.5rem;
+        }
+    }
+}
