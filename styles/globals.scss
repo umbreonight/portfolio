@@ -102,6 +102,11 @@ p {
   }
 }
 
+label {
+  display: block;
+  margin-bottom: .2em;
+}
+
 @keyframes fab-pulse {
   0% {
     transform: scale(1);
